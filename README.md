@@ -1,6 +1,19 @@
 # vue-firebase-startup-kit
 
-This template should help get you started developing with Vue 3 in Vite.
+## Initial Setup
+
+```sh
+npm init vue@latest
+```
+
+- Project name: vue-firebase-startup-kit
+- Add TypeScript: Yes
+- Add JSX Support: No
+- Add Vue Router for Single Page Application development: No
+- Add Pinia for state management: No
+- Add Vitest for Unit Testing: No
+- Add Cypress for both Unit and End-to-End testing: No
+- Add ESLint for code quality: No
 
 ## Recommended IDE Setup
 
