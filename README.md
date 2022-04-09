@@ -1,6 +1,10 @@
 # vue-firebase-startup-kit
 
-This template should help get you started developing with Vue 3 in Vite.
+## Initial Setup
+
+```sh
+npm init vue@latest
+```
 
 ## Recommended IDE Setup
 
