@@ -6,6 +6,15 @@
 npm init vue@latest
 ```
 
+- Project name: vue-firebase-startup-kit
+- Add TypeScript: Yes
+- Add JSX Support: No
+- Add Vue Router for Single Page Application development: No
+- Add Pinia for state management: No
+- Add Vitest for Unit Testing: No
+- Add Cypress for both Unit and End-to-End testing: No
+- Add ESLint for code quality: No
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
