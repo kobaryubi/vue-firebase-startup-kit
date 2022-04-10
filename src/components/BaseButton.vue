@@ -1,12 +1,14 @@
 <template>
-  <button @click="handleClick">button</button>
+  <button @click="handleClick">
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
   export default {
     methods: {
-      handleClick: () => {
-        console.log("button");
+      handleClick() {
+        this.$emit("onClick");
       }
     }
   }
