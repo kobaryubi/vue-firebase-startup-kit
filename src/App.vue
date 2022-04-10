@@ -1,7 +1,8 @@
 <template>
   <TheHeader :title="'TITLE'" />
   <main>
-    <p>{{ count }}</p>
+    <p v-if="!validationMessageList.length">{{ count }}</p>
+    <p v-else v-for="message in validationMessageList" :key="message">{{ message }}</p>
     <BaseButton
       :disabled="hasMaxCount"
       @onClick="plusOne"
@@ -35,17 +36,12 @@ export default {
     return {
       count: 0,
       inputCount: 0,
+      isEditing: false,
     };
   },
   watch: {
-    inputCount(value) {
-      if (value >= 9999) {
-        this.inputCount = 9999;
-      }
-
-      if (value <= 0) {
-        this.inputCount = 0;
-      }
+    inputCount() {
+      this.isEditing = true;
     }
   },
   computed: {
@@ -54,6 +50,29 @@ export default {
     },
     hasMinCount() {
       return this.count <= 0;
+    },
+    hasMaxInputCount() {
+      return this.inputCount > 9999;
+    },
+    hasMinInputCount() {
+      return this.inputCount < 0;
+    },
+    validationMessageList() {
+      const validationList = [];
+
+      if (this.isEditing) {
+        validationList.push('編集中...');
+      }
+
+      if (this.hasMaxInputCount) {
+        validationList.push('10000以上は入力できません');
+      }
+
+      if (this.hasMinInputCount) {
+        validationList.push('0未満は入力できません');
+      }
+
+      return validationList;
     }
   },
   methods: {
@@ -64,7 +83,10 @@ export default {
       this.count--;
     },
     insertCount() {
+      if (this.hasMaxInputCount || this.hasMinInputCount) return;
+
       this.count = this.inputCount;
+      this.isEditing = false;
     }
   }
 };
