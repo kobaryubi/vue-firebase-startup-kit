@@ -3,21 +3,21 @@
 </template>
 
 <script lang="ts">
-  export default {
-    props: {
-      modelValue: {
-        type: Number
-      },
-      modelModifiers: {}
+export default {
+  props: {
+    modelValue: {
+      type: Number,
     },
-    methods: {
-      emitValue({ target: { value } }) {
-        if (this.modelModifiers.numberOnly && value === '') {
-          value = 0;
-        }
-
-        this.$emit('update:modelValue', Number(value));
+    modelModifiers: {},
+  },
+  methods: {
+    emitValue({ target: { value } }) {
+      if (this.modelModifiers.numberOnly && value === '') {
+        value = 0;
       }
-    }
-  }
+
+      this.$emit('update:modelValue', Number(value));
+    },
+  },
+};
 </script>

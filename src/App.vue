@@ -2,19 +2,11 @@
   <TheHeader :title="'TITLE'" />
   <main>
     <p v-if="!validationMessageList.length">{{ count }}</p>
-    <p v-else v-for="message in validationMessageList" :key="message">{{ message }}</p>
-    <BaseButton
-      :disabled="hasMaxCount"
-      @onClick="plusOne"
-    >
-      +
-    </BaseButton>
-    <BaseButton
-      :disabled="hasMinCount"
-      @onClick="minusOne"
-    >
-      -
-    </BaseButton>
+    <p v-else v-for="message in validationMessageList" :key="message">
+      {{ message }}
+    </p>
+    <BaseButton :disabled="hasMaxCount" @onClick="plusOne">+</BaseButton>
+    <BaseButton :disabled="hasMinCount" @onClick="minusOne">-</BaseButton>
 
     <NumberInput v-model.numberOnly="inputCount" />
     <BaseButton @onClick="insertCount">insert</BaseButton>
@@ -42,7 +34,7 @@ export default {
   watch: {
     inputCount() {
       this.isEditing = true;
-    }
+    },
   },
   computed: {
     hasMaxCount() {
@@ -73,7 +65,7 @@ export default {
       }
 
       return validationList;
-    }
+    },
   },
   methods: {
     plusOne() {
@@ -87,8 +79,8 @@ export default {
 
       this.count = this.inputCount;
       this.isEditing = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
