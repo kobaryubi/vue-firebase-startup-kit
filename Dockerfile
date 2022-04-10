@@ -1,4 +1,4 @@
-FROM node:17.8
+FROM node:16
 
 WORKDIR /usr/src/vue-firebase-startup-kit
 COPY . .
