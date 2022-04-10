@@ -37,6 +37,17 @@ export default {
       inputCount: 0,
     };
   },
+  watch: {
+    inputCount(value) {
+      if (value >= 9999) {
+        this.inputCount = 9999;
+      }
+
+      if (value <= 0) {
+        this.inputCount = 0;
+      }
+    }
+  },
   computed: {
     hasMaxCount() {
       return this.count >= 9999;
