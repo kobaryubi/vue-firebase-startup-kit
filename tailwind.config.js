@@ -1,5 +1,6 @@
 module.exports = {
-  content: [
+  mode: 'jit',
+  purge: [
     "./index.html",
     "./src/**/*.{vue,ts}",
   ],
