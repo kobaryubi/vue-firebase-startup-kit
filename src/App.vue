@@ -5,7 +5,7 @@
     <BaseButton @onClick="plusOne">+</BaseButton>
     <BaseButton @onClick="minusOne">-</BaseButton>
 
-    <input v-model="inputCount" type="number" />
+    <NumberInput v-model.numberOnly="inputCount" />
     <BaseButton @onClick="insertCount">insert</BaseButton>
   </main>
 </template>
@@ -13,11 +13,13 @@
 <script lang="ts">
 import TheHeader from './components/TheHeader.vue';
 import BaseButton from './components/BaseButton.vue';
+import NumberInput from './components/NumberInput.vue';
 
 export default {
   components: {
     TheHeader,
     BaseButton,
+    NumberInput,
   },
   data() {
     return {
