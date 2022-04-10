@@ -2,8 +2,18 @@
   <TheHeader :title="'TITLE'" />
   <main>
     <p>{{ count }}</p>
-    <BaseButton @onClick="plusOne">+</BaseButton>
-    <BaseButton @onClick="minusOne">-</BaseButton>
+    <BaseButton
+      :disabled="hasMaxCount"
+      @onClick="plusOne"
+    >
+      +
+    </BaseButton>
+    <BaseButton
+      :disabled="hasMinCount"
+      @onClick="minusOne"
+    >
+      -
+    </BaseButton>
 
     <NumberInput v-model.numberOnly="inputCount" />
     <BaseButton @onClick="insertCount">insert</BaseButton>
@@ -26,6 +36,14 @@ export default {
       count: 0,
       inputCount: 0,
     };
+  },
+  computed: {
+    hasMaxCount() {
+      return this.count >= 9999;
+    },
+    hasMinCount() {
+      return this.count <= 0;
+    }
   },
   methods: {
     plusOne() {
