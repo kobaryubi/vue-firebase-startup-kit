@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts">
-  export default {
-    methods: {
-      handleClick() {
-        this.$emit("onClick");
-      }
-    }
-  }
+export default {
+  methods: {
+    handleClick() {
+      this.$emit('onClick');
+    },
+  },
+};
 </script>
