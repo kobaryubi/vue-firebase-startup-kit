@@ -1,9 +1,5 @@
 <template>
-  <input
-    :value="modelValue"
-    type="number"
-    @input="emitValue"
-  >
+  <input :value="modelValue" type="number" @input="emitValue" />
 </template>
 
 <script lang="ts">
