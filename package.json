@@ -9,7 +9,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "format": "prettier -w src/**/*.{vue,ts}",
-    "fix": "yarn format"
+    "lint": "eslint --fix src/**/*.{vue,ts}",
+    "fix": "yarn format && yarn lint"
   },
   "dependencies": {
     "vue": "^3.2.31"
