@@ -1,6 +1,6 @@
 <template>
   <article>
-    <my-header
+    <MyHeader
       :user="user"
       @login="$emit('login')"
       @logout="$emit('logout')"

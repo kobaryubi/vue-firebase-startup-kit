@@ -18,4 +18,8 @@ module.exports = {
     extraFileExtensions: ['.vue'],
   },
   plugins: ['@typescript-eslint'],
+  rules: {
+    quotes: ['error', 'single'],
+    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
+  },
 };
