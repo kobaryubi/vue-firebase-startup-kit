@@ -15,6 +15,7 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2021,
+    extraFileExtensions: ['.vue'],
   },
   plugins: ['@typescript-eslint'],
 };
