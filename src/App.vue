@@ -7,11 +7,11 @@
     <p v-for="message in validationMessageList" v-else :key="message">
       {{ message }}
     </p>
-    <BaseButton :disabled="hasMaxCount" @on-click="plusOne">+</BaseButton>
-    <BaseButton :disabled="hasMinCount" @on-click="minusOne">-</BaseButton>
+    <BaseButton :disabled="hasMaxCount" @click="plusOne">+</BaseButton>
+    <BaseButton :disabled="hasMinCount" @click="minusOne">-</BaseButton>
 
     <NumberInput v-model.numberOnly="inputCount" />
-    <BaseButton @on-click="insertCount">insert</BaseButton>
+    <BaseButton @click="insertCount">insert</BaseButton>
   </main>
 </template>
 
