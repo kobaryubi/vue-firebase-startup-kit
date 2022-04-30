@@ -12,11 +12,15 @@
 
     <NumberInput v-model.numberOnly="inputCount" />
     <BaseButton @click="insertCount">insert</BaseButton>
+
+    <ButtonSample />
   </main>
 </template>
 
 <script lang="ts">
+// TODO: composition APIに書き換える
 import TheHeader from './components/TheHeader.vue';
+import ButtonSample from './components/buttons/ButtonSample.vue';
 import BaseButton from './components/buttons/BaseButton.vue';
 import NumberInput from './components/NumberInput.vue';
 
@@ -25,6 +29,7 @@ export default {
     TheHeader,
     BaseButton,
     NumberInput,
+    ButtonSample,
   },
   data() {
     return {
