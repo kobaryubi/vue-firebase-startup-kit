@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import TheHeader from './components/TheHeader.vue';
-import BaseButton from './components/BaseButton.vue';
+import BaseButton from './components/buttons/BaseButton.vue';
 import NumberInput from './components/NumberInput.vue';
 
 export default {
