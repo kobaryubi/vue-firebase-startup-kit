@@ -20,6 +20,16 @@
         Secondary Disabled
       </SecondaryButton>
     </div>
+    <div class="mb-2">
+      <SecondaryButton
+        href="http://example.com"
+        target="_blank"
+        rel="noopener"
+        @click="handleClick"
+      >
+        Secondary Link
+      </SecondaryButton>
+    </div>
   </div>
 </template>
 
