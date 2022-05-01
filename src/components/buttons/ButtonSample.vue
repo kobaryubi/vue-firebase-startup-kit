@@ -1,19 +1,31 @@
 <template>
   <div>
-    <p class="mb-2 text-2xl">Buttons</p>
+    <p class="mb-2 text-2xl">
+      Buttons
+    </p>
     <div class="mb-2">
-      <PrimaryButton @click="handleClick">Primary</PrimaryButton>
+      <PrimaryButton @click="handleClick">
+        Primary
+      </PrimaryButton>
     </div>
     <div class="mb-2">
-      <PrimaryButton :disabled="true" @click="handleClick">
+      <PrimaryButton
+        :disabled="true"
+        @click="handleClick"
+      >
         Primary Disabled
       </PrimaryButton>
     </div>
     <div class="mb-2">
-      <SecondaryButton @click="handleClick">Secondary</SecondaryButton>
+      <SecondaryButton @click="handleClick">
+        Secondary
+      </SecondaryButton>
     </div>
     <div class="mb-2">
-      <SecondaryButton :disabled="true" @click="handleClick">
+      <SecondaryButton
+        :disabled="true"
+        @click="handleClick"
+      >
         Secondary Disabled
       </SecondaryButton>
     </div>

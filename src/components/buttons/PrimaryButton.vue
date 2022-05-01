@@ -1,5 +1,9 @@
 <template>
-  <BaseButton :disabled="disabled" :class="buttonClass" @click="handleClick">
+  <BaseButton
+    :disabled="disabled"
+    :class="buttonClass"
+    @click="handleClick"
+  >
     <slot />
   </BaseButton>
 </template>
