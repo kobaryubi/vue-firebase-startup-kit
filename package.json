@@ -9,6 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint --fix src/**/*.{vue,ts}",
+    "lint:watch": "esw --watch --color --clear --fix --ext .vue src",
     "fix": "yarn lint"
   },
   "dependencies": {
@@ -31,6 +32,7 @@
     "babel-loader": "^8.2.4",
     "eslint": "^8.13.0",
     "eslint-plugin-vue": "^8.6.0",
+    "eslint-watch": "^8.0.0",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "~4.6.3",
