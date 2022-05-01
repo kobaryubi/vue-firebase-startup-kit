@@ -13,7 +13,10 @@
     <NumberInput v-model.numberOnly="inputCount" />
     <BaseButton @click="insertCount">insert</BaseButton>
 
-    <ButtonSample />
+    <div class="m-4">
+      <ButtonSample />
+      <DialogSample />
+    </div>
   </main>
 </template>
 
@@ -21,6 +24,7 @@
 // TODO: composition APIに書き換える
 import TheHeader from './components/TheHeader.vue';
 import ButtonSample from './components/buttons/ButtonSample.vue';
+import DialogSample from './components/dialogs/DialogSample.vue';
 import BaseButton from './components/buttons/BaseButton.vue';
 import NumberInput from './components/NumberInput.vue';
 
@@ -30,6 +34,7 @@ export default {
     BaseButton,
     NumberInput,
     ButtonSample,
+    DialogSample
   },
   data() {
     return {
