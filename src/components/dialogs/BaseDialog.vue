@@ -1,5 +1,8 @@
 <template>
-  <teleport v-if="isVisible" to="body">
+  <teleport
+    v-if="isVisible"
+    to="body"
+  >
     <div
       v-bind="$attrs"
       class="fixed top-0 left-0 flex items-start justify-center w-screen h-screen overflow-y-scroll backdrop-filter backdrop-blur-md"

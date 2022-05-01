@@ -1,21 +1,34 @@
 <template>
   <div>
-    <p class="mb-2 text-2xl">Dialogs</p>
+    <p class="mb-2 text-2xl">
+      Dialogs
+    </p>
     <div>
-      <BaseDialog :is-visible="isVisible" @backdrop-clicked="switchDialog">
+      <BaseDialog
+        :is-visible="isVisible"
+        @backdrop-clicked="switchDialog"
+      >
         <template #title>
-          <p class="font-bold">Dialog</p>
+          <p class="font-bold">
+            Dialog
+          </p>
         </template>
-        <template #body>本文</template>
+        <template #body>
+          本文
+        </template>
         <template #footer>
           <div class="flex justify-end">
-            <SecondaryButton @click="switchDialog">close</SecondaryButton>
+            <SecondaryButton @click="switchDialog">
+              close
+            </SecondaryButton>
           </div>
         </template>
       </BaseDialog>
     </div>
     <div class="mb-2">
-      <PrimaryButton @click="switchDialog">open</PrimaryButton>
+      <PrimaryButton @click="switchDialog">
+        open
+      </PrimaryButton>
     </div>
   </div>
 </template>
