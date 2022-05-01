@@ -10,6 +10,7 @@
     "build-storybook": "build-storybook",
     "lint": "eslint --fix src/**/*.{vue,ts}",
     "lint:watch": "esw --watch --color --clear --fix --ext .vue src",
+    "type-check:watch": "vue-tsc --noEmit --watch --allowjs",
     "fix": "yarn lint"
   },
   "dependencies": {

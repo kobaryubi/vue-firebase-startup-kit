@@ -21,6 +21,7 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     indent: ['error', 2],
+    'object-curly-spacing': ['error', 'always'],
     'vue/html-indent': ['error', 2],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
   },
