@@ -37,41 +37,6 @@
         label="width full"
       />
     </div>
-    <div class="w-80">
-      <InputText
-        v-model:value="inputNumberValue"
-        type="number"
-        label="number"
-      />
-    </div>
-    <div class="w-80">
-      <InputText
-        v-model:value="inputPasswordValue"
-        type="password"
-        label="password"
-      />
-    </div>
-    <div class="w-80">
-      <InputText
-        v-model:value="inputEmailValue"
-        type="email"
-        label="email"
-      />
-    </div>
-    <div class="w-80">
-      <InputText
-        v-model:value="inputTelValue"
-        type="tel"
-        label="tel"
-      />
-    </div>
-    <div class="w-80">
-      <InputText
-        v-model:value="inputDateValue"
-        type="date"
-        label="date"
-      />
-    </div>
   </div>
 </template>
 
