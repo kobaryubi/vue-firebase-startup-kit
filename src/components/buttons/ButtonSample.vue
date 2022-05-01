@@ -13,10 +13,7 @@
       <SecondaryButton @click="handleClick">Secondary</SecondaryButton>
     </div>
     <div class="mb-2">
-      <SecondaryButton
-        :disabled="true"
-        @click="handleClick"
-      >
+      <SecondaryButton :disabled="true" @click="handleClick">
         Secondary Disabled
       </SecondaryButton>
     </div>
@@ -41,17 +38,17 @@ import SecondaryButton from './SecondaryButton.vue';
 export default defineComponent({
   components: {
     PrimaryButton,
-    SecondaryButton
+    SecondaryButton,
   },
   emits: ['click'],
   setup() {
     const handleClick = () => {
-      alert('clicked')
-    }
+      alert('clicked');
+    };
 
     return {
-      handleClick
-    }
-  }
-})
+      handleClick,
+    };
+  },
+});
 </script>

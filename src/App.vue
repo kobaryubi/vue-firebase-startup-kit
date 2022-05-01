@@ -34,7 +34,7 @@ export default {
     BaseButton,
     NumberInput,
     ButtonSample,
-    DialogSample
+    DialogSample,
   },
   data() {
     return {
