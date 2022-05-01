@@ -4,14 +4,30 @@
     <p v-if="!validationMessageList.length">
       {{ count }}
     </p>
-    <p v-for="message in validationMessageList" v-else :key="message">
+    <p
+      v-for="message in validationMessageList"
+      v-else
+      :key="message"
+    >
       {{ message }}
     </p>
-    <BaseButton :disabled="hasMaxCount" @click="plusOne">+</BaseButton>
-    <BaseButton :disabled="hasMinCount" @click="minusOne">-</BaseButton>
+    <BaseButton
+      :disabled="hasMaxCount"
+      @click="plusOne"
+    >
+      +
+    </BaseButton>
+    <BaseButton
+      :disabled="hasMinCount"
+      @click="minusOne"
+    >
+      -
+    </BaseButton>
 
     <NumberInput v-model.numberOnly="inputCount" />
-    <BaseButton @click="insertCount">insert</BaseButton>
+    <BaseButton @click="insertCount">
+      insert
+    </BaseButton>
 
     <div class="m-4">
       <ButtonSample />
