@@ -19,6 +19,8 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     quotes: ['error', 'single'],
+    semi: ['error', 'always'],
+    indent: ['error', 2],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
   },
 };
