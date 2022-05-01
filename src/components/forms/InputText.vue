@@ -53,7 +53,7 @@ export default defineComponent({
       default: ''
     },
     type: {
-      type: String as PropType<'text' | 'number' | 'password' | 'email' | 'tel' | 'date'>,
+      type: String as PropType<'text' | 'number'>,
       default: 'text'
     },
     disabled: {
