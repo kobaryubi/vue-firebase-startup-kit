@@ -1,21 +1,8 @@
 <template>
-  <!-- TODO: visible to isVisible -->
-  <teleport v-if="visible" to="body">
+  <teleport v-if="isVisible" to="body">
     <div
       v-bind="$attrs"
-      class="
-        fixed
-        top-0
-        left-0
-        flex
-        items-start
-        justify-center
-        w-screen
-        h-screen
-        overflow-y-scroll
-        backdrop-filter
-        backdrop-blur-md
-      "
+      class="fixed top-0 left-0 flex items-start justify-center w-screen h-screen overflow-y-scroll backdrop-filter backdrop-blur-md"
       @click.stop="clickBackDrop"
     >
       <section
@@ -43,16 +30,16 @@ import { defineComponent, watchEffect } from 'vue';
 
 export default defineComponent({
   props: {
-    visible: {
+    isVisible: {
       type: Boolean,
       required: true,
-    }
+    },
   },
   emits: ['backdropClicked'],
   setup(props, { emit }) {
     const clickBackDrop = () => {
-      emit('backdropClicked')
-    }
+      emit('backdropClicked');
+    };
 
     watchEffect((onInvalidate) => {
       if (!props.visible) {
@@ -60,16 +47,16 @@ export default defineComponent({
       }
 
       const overflow = document.documentElement.style.overflow;
-      document.documentElement.style.overflow = "hidden"
+      document.documentElement.style.overflow = 'hidden';
 
       onInvalidate(() => {
         document.documentElement.style.overflow = overflow;
-      })
-    })
+      });
+    });
 
     return {
-      clickBackDrop
-    }
-  }
-})
+      clickBackDrop,
+    };
+  },
+});
 </script>

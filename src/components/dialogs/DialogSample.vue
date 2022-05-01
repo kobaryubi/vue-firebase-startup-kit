@@ -2,13 +2,11 @@
   <div>
     <p class="mb-2 text-2xl">Dialogs</p>
     <div>
-      <BaseDialog :visible="isVisible" @backdrop-clicked="switchDialog">
+      <BaseDialog :is-visible="isVisible" @backdrop-clicked="switchDialog">
         <template #title>
           <p class="font-bold">Dialog</p>
         </template>
-        <template #body>
-          本文
-        </template>
+        <template #body>本文</template>
         <template #footer>
           <div class="flex justify-end">
             <SecondaryButton @click="switchDialog">close</SecondaryButton>
@@ -32,18 +30,18 @@ export default defineComponent({
   components: {
     BaseDialog,
     PrimaryButton,
-    SecondaryButton
+    SecondaryButton,
   },
   setup() {
-    const isVisible = ref(false)
+    const isVisible = ref(false);
     const switchDialog = () => {
-      isVisible.value = !isVisible.value
-    }
+      isVisible.value = !isVisible.value;
+    };
 
     return {
       isVisible,
-      switchDialog
-    }
-  }
-})
+      switchDialog,
+    };
+  },
+});
 </script>

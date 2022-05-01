@@ -33,7 +33,7 @@ export default defineComponent({
     link: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   emits: {
     click: null,
@@ -44,17 +44,18 @@ export default defineComponent({
     };
 
     const buttonClass = computed(() =>
-    props.disabled ? 'text-gray-400 bg-gray-100' : 'text-gray-900 bg-gray-200');
+      props.disabled ? 'text-gray-400 bg-gray-100' : 'text-gray-900 bg-gray-200'
+    );
 
-    const linkButtonClass = computed(() => 
-      props.disabled ? 'text-gray-400 bg-gray-100' : 'text-gray-900 bg-gray-200'  
-    )
+    const linkButtonClass = computed(() =>
+      props.disabled ? 'text-gray-400 bg-gray-100' : 'text-gray-900 bg-gray-200'
+    );
 
     return {
       handleClick,
       buttonClass,
-      linkButtonClass
-    }
-  }
+      linkButtonClass,
+    };
+  },
 });
 </script>

@@ -10,30 +10,30 @@ import BaseButton from './BaseButton.vue';
 
 export default defineComponent({
   components: {
-    BaseButton
+    BaseButton,
   },
   props: {
     disabled: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   emits: {
-    click: null
+    click: null,
   },
   setup(props, { emit }) {
     const handleClick = () => {
       emit('click');
-    }
+    };
 
-    const buttonClass = computed(() => 
+    const buttonClass = computed(() =>
       props.disabled ? 'text-gray-400 bg-gray-100' : 'text-white bg-gray-800'
-    )
+    );
 
     return {
       handleClick,
-      buttonClass
-    }
-  }
-})
+      buttonClass,
+    };
+  },
+});
 </script>
