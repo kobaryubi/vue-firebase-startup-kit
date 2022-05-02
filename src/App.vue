@@ -33,6 +33,7 @@
       <ButtonSample />
       <DialogSample />
       <InputTextSample />
+      <InputRadioSample />
     </div>
   </main>
 </template>
@@ -45,6 +46,7 @@ import DialogSample from '@/components/dialogs/DialogSample.vue';
 import BaseButton from '@/components/buttons/BaseButton.vue';
 import NumberInput from '@/components/NumberInput.vue';
 import InputTextSample from '@/components/forms/InputTextSample.vue';
+import InputRadioSample from '@/components/forms/InputRadioSample.vue';
 
 export default {
   components: {
@@ -54,6 +56,7 @@ export default {
     ButtonSample,
     DialogSample,
     InputTextSample,
+    InputRadioSample,
   },
   data() {
     return {

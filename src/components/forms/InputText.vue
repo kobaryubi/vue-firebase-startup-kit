@@ -114,6 +114,7 @@ export default defineComponent({
 
     return {
       listeners,
+      isFocus,
       smallLabelClass,
       errorClass,
       disabledLabelClass,
