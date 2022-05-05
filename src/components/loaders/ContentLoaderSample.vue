@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ContentLoader from '@/components/loaders/ContentLoaderSample.vue';
+import ContentLoader from '@/components/loaders/ContentLoader.vue';
 
 export default defineComponent({
   components: {

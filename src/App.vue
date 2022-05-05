@@ -48,7 +48,7 @@ import BaseButton from '@/components/buttons/BaseButton.vue';
 import NumberInput from '@/components/NumberInput.vue';
 import InputTextSample from '@/components/forms/InputTextSample.vue';
 import InputRadioSample from '@/components/forms/InputRadioSample.vue';
-import ContentLoader from '@/components/loaders/ContentLoaderSample.vue';
+import ContentLoaderSample from '@/components/loaders/ContentLoaderSample.vue';
 
 export default {
   components: {
@@ -59,7 +59,7 @@ export default {
     DialogSample,
     InputTextSample,
     InputRadioSample,
-    ContentLoader
+    ContentLoaderSample
   },
   data() {
     return {
