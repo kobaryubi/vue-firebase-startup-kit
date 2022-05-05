@@ -22,7 +22,7 @@ type Post = {
 
 export default defineComponent({
   async setup() {
-    const { data } = await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+    const { data } = await axios.get<Post[]>('/api/posts');
 
     return {
       data
