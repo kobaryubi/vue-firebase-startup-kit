@@ -1,4 +1,4 @@
-import { rest } from 'msw'
+import { rest } from 'msw';
 
 export const handlers = [
   rest.get('/api/posts', (req, res, ctx) => {
@@ -25,6 +25,6 @@ export const handlers = [
           'completed': false
         },
       ]),
-    )
+    );
   }),
-]
+];
