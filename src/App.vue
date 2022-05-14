@@ -12,17 +12,20 @@
           Todos
         </router-link>
       </li>
+      <li>
+        <router-link to="/todos/create">
+          Create Todo
+        </router-link>
+      </li>
     </ul>
     <router-view />
 
-    <p>{{ message }}</p>
     <p>Count is: {{ counter.count }}</p>
   </main>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 
 const counter = reactive({ count: 0 });
-const message = ref('Hello World!');
 </script>
