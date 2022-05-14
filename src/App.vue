@@ -28,37 +28,20 @@
     <BaseButton @click="insertCount">
       insert
     </BaseButton>
-
-    <div class="m-4">
-      <ContentLoaderSample />
-      <DialogSample />
-      <InputTextSample />
-      <InputRadioSample />
-    </div>
-
-    <Counter />
   </main>
 </template>
 
 <script lang="ts">
 // TODO: composition APIに書き換える
 import TheHeader from '@/components/TheHeader.vue';
-import DialogSample from '@/components/dialogs/DialogSample.vue';
 import BaseButton from '@/components/buttons/BaseButton.vue';
 import NumberInput from '@/components/NumberInput.vue';
-import InputTextSample from '@/components/forms/InputTextSample.vue';
-import InputRadioSample from '@/components/forms/InputRadioSample.vue';
-import ContentLoaderSample from '@/components/loaders/ContentLoaderSample.vue';
 
 export default {
   components: {
     TheHeader,
     BaseButton,
     NumberInput,
-    DialogSample,
-    InputTextSample,
-    InputRadioSample,
-    ContentLoaderSample
   },
   data() {
     return {
