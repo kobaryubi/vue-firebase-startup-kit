@@ -31,18 +31,18 @@
 
     <div class="m-4">
       <ContentLoaderSample />
-      <ButtonSample />
       <DialogSample />
       <InputTextSample />
       <InputRadioSample />
     </div>
+
+    <Counter />
   </main>
 </template>
 
 <script lang="ts">
 // TODO: composition APIに書き換える
 import TheHeader from '@/components/TheHeader.vue';
-import ButtonSample from '@/components/buttons/ButtonSample.vue';
 import DialogSample from '@/components/dialogs/DialogSample.vue';
 import BaseButton from '@/components/buttons/BaseButton.vue';
 import NumberInput from '@/components/NumberInput.vue';
@@ -55,7 +55,6 @@ export default {
     TheHeader,
     BaseButton,
     NumberInput,
-    ButtonSample,
     DialogSample,
     InputTextSample,
     InputRadioSample,
