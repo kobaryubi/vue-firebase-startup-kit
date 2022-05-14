@@ -22,7 +22,8 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {},
 	"extensions": [
-		"johnsoncodehk.volar",
+		"Vue.volar",
+		"Vue.vscode-typescript-vue-plugin",
 		"eamodio.gitlens",
 		"csstools.postcss",
 		"bradlc.vscode-tailwindcss",
