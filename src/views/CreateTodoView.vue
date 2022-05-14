@@ -14,5 +14,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const content = ref('');
+const content = ref();
 </script>
