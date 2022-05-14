@@ -1,6 +1,7 @@
 <template>
   <main>
     <h1>TODO List</h1>
+    <router-view />
 
     <p>{{ message }}</p>
     <p>Count is: {{ counter.count }}</p>
