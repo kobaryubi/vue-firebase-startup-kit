@@ -1,6 +1,18 @@
 <template>
   <main>
     <h1>TODO List</h1>
+    <ul>
+      <li>
+        <router-link to="/">
+          Home
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/todos">
+          Todos
+        </router-link>
+      </li>
+    </ul>
     <router-view />
 
     <p>{{ message }}</p>
