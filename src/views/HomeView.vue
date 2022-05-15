@@ -6,15 +6,10 @@
 </template>
 
 <script setup lang="ts">
-import { ui } from '@/firebase';
-import { EmailAuthProvider } from 'firebase/auth';
+import { onMounted } from 'vue';
+import { ui, uiConfig } from '@/firebase';
 
-ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    {
-      provider: EmailAuthProvider.PROVIDER_ID,
-      signInMethod: EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-    }
-  ],
+onMounted(() => {
+  ui.start('#firebaseui-auth-container', uiConfig);
 });
 </script>
