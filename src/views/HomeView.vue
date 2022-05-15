@@ -2,9 +2,6 @@
   <div>
     <h2>Home</h2>
     <div id="firebaseui-auth-container" />
-    <div id="loader">
-      Loading...
-    </div>
   </div>
 </template>
 
