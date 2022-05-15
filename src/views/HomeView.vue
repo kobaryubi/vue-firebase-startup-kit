@@ -12,12 +12,14 @@
 import { ui } from '@/firebase';
 import { EmailAuthProvider } from 'firebase/auth';
 
-ui.start('#firebaseui-auth-container', {
-  signInOptions: [
-    {
-      provider: EmailAuthProvider.PROVIDER_ID,
-      signInMethod: EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-    }
-  ],
-});
+if (ui.isPendingRedirect()) {
+  ui.start('#firebaseui-auth-container', {
+    signInOptions: [
+      {
+        provider: EmailAuthProvider.PROVIDER_ID,
+        signInMethod: EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
+      }
+    ],
+  });
+}
 </script>
