@@ -8,16 +8,25 @@
         type="text"
         placeholder="content"
       >
-      <button>create</button>
+      <button :disabled="!content">create</button>
     </label>
   </form>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '@/firebase';
 
 const content = ref();
-const createTodo = () => {
-  console.log(content.value);
+const createTodo = async () => {
+  try {
+    const todosCollection = collection(db, 'todos');
+    await addDoc(todosCollection, {
+      content: content.value
+    });
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
 };
 </script>

@@ -1,4 +1,5 @@
 import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 import { initializeApp, getApps } from 'firebase/app';
 import * as firebaseui from 'firebaseui';
 import { EmailAuthProvider } from 'firebase/auth';
@@ -10,12 +11,10 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
+const apps = getApps();
+const app = apps.length === 0 ? initializeApp(firebaseConfig) : apps[0];
 
-if (getApps().length === 0) {
-  initializeApp(firebaseConfig);
-}
-
-const auth = getAuth();
+export const db = getFirestore(app);
 
 const actionCodeSettings = {
   url: 'http://localhost:3000/todos',
@@ -38,4 +37,5 @@ export const uiConfig = {
   signInSuccessUrl: 'http://localhost:3000/todos',
 };
 
+const auth = getAuth();
 export const ui = new firebaseui.auth.AuthUI(auth);

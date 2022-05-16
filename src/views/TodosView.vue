@@ -2,7 +2,10 @@
   <p>TodosView</p>
   <div id="firebaseui-auth-container" />
   <ul>
-    <li v-for="{ id, content } in todos" :key="id">
+    <li
+      v-for="{ id, content } in todos"
+      :key="id"
+    >
       {{ content }}
       <button @click="deleteTodo(id)">
         X
