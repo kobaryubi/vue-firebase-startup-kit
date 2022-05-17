@@ -16,13 +16,20 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { ui, uiConfig } from '@/firebase';
+import { ui, uiConfig, db } from '@/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
-const todos = ref([
-  { id: 1, content: 'A' },
-  { id: 2, content: 'B' },
-  { id: 3, content: 'C' },
-]);
+const todos = ref([]);
+(async () => {
+  const todosCollection = collection(db, 'todos');
+  const querySnapshot = await getDocs(todosCollection);
+  querySnapshot.forEach((doc) => {
+    todos.value.push({
+      id: doc.id,
+      ...doc.data()
+    });
+  });
+})();
 
 onMounted(() => {
   if (ui.isPendingRedirect()) {
