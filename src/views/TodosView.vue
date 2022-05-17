@@ -3,11 +3,16 @@
   <div id="firebaseui-auth-container" />
   <ul>
     <li
-      v-for="{ id, content } in todos"
-      :key="id"
+      v-for="todo in todos"
+      :key="todo.id"
     >
-      {{ content }}
-      <button @click="deleteTodo(id)">
+      <input
+        v-model="todo.hasDone"
+        type="checkbox"
+        @change="updateHasDone(todo)"
+      >
+      {{ todo.content }}
+      <button @click="deleteTodo(todo.id)">
         X
       </button>
     </li>
@@ -39,5 +44,9 @@ onMounted(() => {
 
 const deleteTodo = (id) => {
   todos.value = todos.value.filter((todo) => todo.id !== id);
+};
+
+const updateHasDone = (todo) => {
+  console.log(todo);
 };
 </script>

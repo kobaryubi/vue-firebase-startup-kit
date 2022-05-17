@@ -23,7 +23,8 @@ const createTodo = async () => {
   try {
     const todosCollection = collection(db, 'todos');
     await addDoc(todosCollection, {
-      content: content.value
+      content: content.value,
+      hasDone: false,
     });
   } catch (e) {
     console.error('Error adding document: ', e);
