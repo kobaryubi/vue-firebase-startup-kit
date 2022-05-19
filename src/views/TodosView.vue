@@ -12,7 +12,7 @@
         @change="updateHasDone(todo)"
       >
       {{ todo.content }}
-      <button @click="deleteTodo(todo.id)">
+      <button @click="deleteTodo(todo)">
         X
       </button>
     </li>
@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { ui, uiConfig, db } from '@/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
 
 const todos = ref([]);
 (async () => {
@@ -42,8 +42,10 @@ onMounted(() => {
   }
 });
 
-const deleteTodo = (id) => {
-  todos.value = todos.value.filter((todo) => todo.id !== id);
+const deleteTodo = async (todo) => {
+  const todoDocumentRef = doc(db, 'todos', todo.id);
+  await deleteDoc(todoDocumentRef);
+  todos.value = todos.value.filter(({ id }) => id !== todo.id);
 };
 
 const updateHasDone = (todo) => {
