@@ -17,8 +17,11 @@
 import { ref } from 'vue';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
+import { useRouter } from 'vue-router';
 
 const content = ref();
+const router = useRouter();
+
 const createTodo = async () => {
   try {
     const todosCollection = collection(db, 'todos');
@@ -26,6 +29,8 @@ const createTodo = async () => {
       content: content.value,
       hasDone: false,
     });
+
+    router.push('/todos');
   } catch (e) {
     console.error('Error adding document: ', e);
   }
