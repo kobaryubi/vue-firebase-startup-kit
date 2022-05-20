@@ -3,7 +3,7 @@
   <div id="firebaseui-auth-container" />
   <ul>
     <li
-      v-for="todo in todos"
+      v-for="todo in filteredTodos"
       :key="todo.id"
     >
       <input
@@ -17,13 +17,17 @@
       </button>
     </li>
   </ul>
+  <button @click="isHiddenDone = !isHiddenDone">
+    {{ isHiddenDone ? 'Show all' : 'Hide done' }}
+  </button>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { ui, uiConfig, db } from '@/firebase';
-import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, deleteDoc, setDoc } from 'firebase/firestore';
 
+const isHiddenDone = ref(false);
 const todos = ref([]);
 (async () => {
   const todosCollection = collection(db, 'todos');
@@ -35,6 +39,12 @@ const todos = ref([]);
     });
   });
 })();
+
+const filteredTodos = computed(() => {
+  return isHiddenDone.value
+    ? todos.value.filter(({ hasDone }) => !hasDone)
+    : todos.value;
+});
 
 onMounted(() => {
   if (ui.isPendingRedirect()) {
@@ -48,7 +58,8 @@ const deleteTodo = async (todo) => {
   todos.value = todos.value.filter(({ id }) => id !== todo.id);
 };
 
-const updateHasDone = (todo) => {
-  console.log(todo);
+const updateHasDone = async (todo) => {
+  const todoDocumentRef = doc(db, 'todos', todo.id);
+  await setDoc(todoDocumentRef, { hasDone: todo.hasDone }, { merge: true });
 };
 </script>

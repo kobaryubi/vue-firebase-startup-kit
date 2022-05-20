@@ -37,5 +37,6 @@ export const uiConfig = {
   signInSuccessUrl: 'http://localhost:3000/todos',
 };
 
-const auth = getAuth();
+export const auth = getAuth();
+
 export const ui = new firebaseui.auth.AuthUI(auth);
