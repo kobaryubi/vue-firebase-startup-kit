@@ -11,7 +11,7 @@
         type="checkbox"
         @change="updateHasDone(todo)"
       >
-      {{ todo.content }}
+      <TodoListItem :content="todo.content" />
       <button @click="deleteTodo(todo)">
         X
       </button>
@@ -26,6 +26,8 @@
 import { onMounted, ref, computed } from 'vue';
 import { ui, uiConfig, db } from '@/firebase';
 import { collection, getDocs, doc, deleteDoc, setDoc } from 'firebase/firestore';
+
+import TodoListItem from '@/components/todos/TodoListItem.vue';
 
 const isHiddenDone = ref(false);
 const todos = ref([]);

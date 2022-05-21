@@ -25,4 +25,7 @@ module.exports = {
     'vue/html-indent': ['error', 2],
     'vue/component-name-in-template-casing': ['error', 'PascalCase'],
   },
+  globals: {
+    defineProps: 'readonly',
+  }
 };
