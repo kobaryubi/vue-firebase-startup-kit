@@ -11,7 +11,7 @@
         type="checkbox"
         @change="updateHasDone(todo)"
       >
-      <TodoListItem :content="todo.content" />
+      <TodoListItem v-bind="todo" />
       <button @click="deleteTodo(todo)">
         X
       </button>
