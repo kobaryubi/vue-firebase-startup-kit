@@ -6,15 +6,11 @@
       v-for="todo in filteredTodos"
       :key="todo.id"
     >
-      <input
-        v-model="todo.hasDone"
-        type="checkbox"
-        @change="updateHasDone(todo)"
-      >
-      <TodoListItem v-bind="todo" />
-      <button @click="deleteTodo(todo)">
-        X
-      </button>
+      <TodoListItem
+        v-bind="todo"
+        @change-has-done="handleChangeHasDone"
+        @click-delete-todo-button="handleClickDeleteTodo"
+      />
     </li>
   </ul>
   <button @click="isHiddenDone = !isHiddenDone">
@@ -54,13 +50,13 @@ onMounted(() => {
   }
 });
 
-const deleteTodo = async (todo) => {
+const handleClickDeleteTodo = async (todo) => {
   const todoDocumentRef = doc(db, 'todos', todo.id);
   await deleteDoc(todoDocumentRef);
   todos.value = todos.value.filter(({ id }) => id !== todo.id);
 };
 
-const updateHasDone = async (todo) => {
+const handleChangeHasDone = async (todo) => {
   const todoDocumentRef = doc(db, 'todos', todo.id);
   await setDoc(todoDocumentRef, { hasDone: todo.hasDone }, { merge: true });
 };
