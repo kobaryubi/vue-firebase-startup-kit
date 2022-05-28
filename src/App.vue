@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="main">
     <h1>TODO List</h1>
     <ul>
       <li>
@@ -17,6 +17,11 @@
           Create Todo
         </router-link>
       </li>
+      <li>
+        <router-link to="/swiper">
+          Swiper
+        </router-link>
+      </li>
     </ul>
     <router-view />
 
@@ -29,3 +34,11 @@ import { reactive } from 'vue';
 
 const counter = reactive({ count: 0 });
 </script>
+
+<style scoped lang="scss">
+@use '@/assets/base';
+
+.main {
+  background-color: base.$main-background-color;
+}
+</style>
