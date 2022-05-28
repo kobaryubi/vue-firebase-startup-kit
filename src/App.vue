@@ -23,7 +23,9 @@
         </router-link>
       </li>
     </ul>
-    <router-view />
+    <div class="main__container">
+      <router-view />
+    </div>
 
     <p>Count is: {{ counter.count }}</p>
   </main>
@@ -40,5 +42,10 @@ const counter = reactive({ count: 0 });
 
 .main {
   background-color: base.$main-background-color;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>
