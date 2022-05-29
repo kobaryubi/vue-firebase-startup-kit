@@ -4,6 +4,8 @@
       <Swiper
         :slides-per-view="3"
         :space-between="16"
+        :free-mode="true"
+        :modules="[FreeMode]"
         @slide-change="handleChangeSlide"
       >
         <SwiperSlide>Slide 1</SwiperSlide>
@@ -20,7 +22,9 @@
 
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { FreeMode } from 'swiper';
 import 'swiper/css';
+import "swiper/css/free-mode";
 
 const handleChangeSlide = () => {
   console.log('slide change');
