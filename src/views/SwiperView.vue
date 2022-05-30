@@ -24,7 +24,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { FreeMode } from 'swiper';
 import 'swiper/css';
-import "swiper/css/free-mode";
+import 'swiper/css/free-mode';
 
 const handleChangeSlide = () => {
   console.log('slide change');
